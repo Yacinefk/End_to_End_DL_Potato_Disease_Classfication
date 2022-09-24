@@ -1,0 +1,12 @@
+Tensorflow input pipeline:
+=========================
+
+Steps to build Data Pipline
+
+tf_dataset = tf.data.dataset.list_files("images/*").map(process_img).filter(filter_func).map(lambda x: x/255)
+
+
+1. tf.data.dataset.list_files("images/*"): Load images from images folder
+2. map(process_img): convert images content to numpy array. Extract label from folder.
+3. filter(filter_func): Filter Blurred images
+4. map(lambda x: x/255): Apply Scalling
